@@ -6,6 +6,7 @@ import { auth } from "firebase/app";
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -16,6 +17,7 @@ export class LoginPage implements OnInit {
 
   user = {} as User;
 
+
   constructor(private afAuth: AngularFireAuth, public toastController: ToastController, public navCtrl: NavController, public alertController: AlertController) { }
   async Login(user: User) {
     if (this.user.email == null || this.user.password == null) {
@@ -24,6 +26,7 @@ export class LoginPage implements OnInit {
         subHeader: 'Datos incorrectos',
         message: 'Al parecer no has ingresado ningun dato',
         buttons: ['OK']
+
       });
       await alert.present();
     }
