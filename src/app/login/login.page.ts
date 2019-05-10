@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastController, NavController } from '@ionic/angular';
 import { HomePage } from '../home/home.page';
 import { User } from '../modules/user';
+import { AngularFireAuth } from "angularfire2/auth";
 
 
 
@@ -15,9 +16,16 @@ export class LoginPage implements OnInit {
 
   user = {} as User;
 
-  constructor(public toastController:ToastController, public navCtrl:NavController) { }
+  constructor(private afAuth: AngularFireAuth,public toastController:ToastController, public navCtrl:NavController) { }
   
-    async Login(){
+  async Login(user: User) {
+    try {
+      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      console.log(result);
+    } catch (e) {
+      console.error(e);
+    }
+      
       const toast = await this.toastController.create({
           message:"Bienvenido",
           duration: 1000
