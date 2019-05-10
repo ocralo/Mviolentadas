@@ -11,7 +11,7 @@
       <!-- Agrego el input del usuario o email-->
         <ion-item>
           <!-- Position floating hace que cuando de click en el input el texto suba automaticamente-->
-          <ion-label position="floating">Username or Email</ion-label>
+          <ion-label position="floating">Email</ion-label>
           <ion-input type="text" [(ngModel)]="user.email"></ion-input>
         </ion-item>
     </div>
@@ -40,7 +40,7 @@
           Register
         </ion-button>
          <!-- Boton de google-->
-         <ion-button expand="full" color="light" (click)="Register()">
+         <ion-button expand="full" color="light" (click)="LoginGoogle()">
           <ion-ripple-effect></ion-ripple-effect> 
               <img src="../../assets/search.svg">
              <ion-label>Login with GOOGLE</ion-label>

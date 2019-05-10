@@ -7,7 +7,9 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AngularFireModule } from "angularfire2";
-import { FIREBASE_CONFIG } from "./app.firebase.config"; 
+import { AngularFireAuth } from "angularfire2/auth";
+import { FIREBASE_CONFIG } from "./app.firebase.config";
+import { AlertController } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +29,9 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     StatusBar,
     SplashScreen,
     CallNumber,
+    AngularFireModule,
+    AngularFireAuth,
+    AlertController,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
